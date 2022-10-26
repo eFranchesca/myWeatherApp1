@@ -62,4 +62,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 }
 
-searchCity("Fort Luaderdale");
+searchCity("Miami");
