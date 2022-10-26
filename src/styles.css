@@ -45,8 +45,11 @@ h1 {
 }
 .footer {
   color: azure;
-  margin-left: 80px;
+  display: block;
+  text-align: center;
+
 }
 .footer:hover {
   text-decoration: underline;
+  color: black;
 }

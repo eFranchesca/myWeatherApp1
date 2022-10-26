@@ -1,5 +1,3 @@
-let timeElement = document.querySelector("#currentTime");
-let date = new Date();
 function formatDate(date) {
 let hour = date.getHours();
 if (hour < 10) {
@@ -21,8 +19,7 @@ let days = [
   "Saturday"
 ];
 let day = days[dayIndex];
-
-timeElement.innerHTML = `${days[dayIndex]} ${hour}:${minute}`;
+return `${days[dayIndex]} ${hour}:${minute}`;
 }
 
 function displayWeatherConditions(response) {
