@@ -1,4 +1,7 @@
 body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/135/original/beach.jpg?1666744406);
+  background-size: cover;
+  background-repeat: no-repeat;
   font-family: sans-serif;
 }
 background {
