@@ -23,11 +23,7 @@ timeElement.innerHTML = `${days[dayIndex]} ${hour}:${minute}`;
 
 function displayWeatherConditions(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-}
-
-function showTemp(response) {
-  let currentTemp = Math.round(response.data.main.temp);
-  document.querySelector("#temperature").innerHTML = `${currentTemp}°F 😎`;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
 }
 
 function searchCity(city) {
@@ -45,9 +41,23 @@ function handleSubmit(event) {
 
 function searchLocation(position) {
   let apiKey = "a5acb752426cd8188485c35694980e3a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  
   axios.get(apiUrl).then(displayWeatherConditions);
 }
 
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+
+
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+dateElement.innerHTML = formatDate(currentTime);
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+}

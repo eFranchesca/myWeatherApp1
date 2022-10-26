@@ -43,6 +43,10 @@ h1 {
   padding-left: 70px;
   list-style: none;
 }
-a {
+.footer {
+  color: azure;
   margin-left: 80px;
+}
+.footer:hover {
+  text-decoration: underline;
 }
