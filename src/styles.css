@@ -44,6 +44,5 @@ h1 {
   list-style: none;
 }
 a {
-  text-decoration: none;
-  margin-left: auto;
+  margin-left: 80px;
 }
